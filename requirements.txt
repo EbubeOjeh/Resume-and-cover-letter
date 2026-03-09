@@ -5,4 +5,5 @@ openai
 reportlab
 werkzeug
 pdfplumber
-python-docx
+python-docx 
+gunicorn
