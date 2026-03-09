@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+    <h1>Welcome {{current_user.username}}</h1>
+
+    <nav>
+
+        <h2>ResumeAI</h2>
+
+        <a href="/logout">Logout</a>
+
+    </nav>
+
+    <div class="container">
+
+        <h2>ATS Score</h2>
+
+        <div class="score-meter">
+
+            <div id="meter-fill"></div>
+
+            <span id="score-text">{{score}}%</span>
+
+        </div>
+
+        <form method="POST" enctype="multipart/form-data">
+
+            <h3>Upload Resume</h3>
+
+            <div id="drop-zone" class="drop-zone">
+
+                Drag & Drop Resume Here
+
+                <br><br>
+
+                <input type="file" name="resume_file" id="file-input">
+
+            </div>
+
+            <h3>Or Paste Resume</h3>
+
+            <textarea name="resume"></textarea>
+
+            <h3>Job Description</h3>
+
+            <textarea name="job" required></textarea>
+
+            <button type="submit">Analyze Resume</button>
+
+        </form>
+
+        <button id="rewriteBtn">Rewrite Resume</button>
+
+        <div id="rewriteResult"></div>
+
+        {% if cover_letter %}
+
+        <form action="/download_pdf" method="POST">
+
+            <input type="hidden" name="cover_letter" value="{{cover_letter}}">
+
+            <button>Download Cover Letter PDF</button>
+
+        </form>
+
+        {% endif %}
+
+        <h2>History</h2>
+
+        {% for item in history %}
+
+        <div class="card">
+
+            Score: {{item.score}}
+
+            <p>{{item.result}}</p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='meter.js') }}"></script>
+
+</body>
+
+</html>

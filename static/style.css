@@ -1,0 +1,243 @@
+/* GLOBAL */
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+    background: linear-gradient(135deg, black, #f8fafc);
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* NAVBAR */
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: transparent;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+nav h2 {
+    color: grey;
+    font-weight: 700;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: 500;
+    color: black;
+}
+
+/* MAIN CONTAINER */
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin-top: 40px;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+/* TEXTAREAS */
+
+textarea {
+    width: 100%;
+    height: 160px;
+    margin: 12px 0;
+    padding: 15px;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+    font-size: 14px;
+    transition: all 0.25s ease;
+    resize: none;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: grey;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+/* MODERN BUTTONS */
+
+button {
+    padding: 14px 28px;
+    background: linear-gradient(135deg, grey, grey);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    color: black;
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.35);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+/* CARD STYLE */
+
+.card {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f9fafc;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+    text-align: left;
+}
+
+/* SCORE METER */
+
+.score-meter {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 12px solid #e5e7eb;
+    position: relative;
+    margin: 30px auto;
+}
+
+#meter-fill {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 12px solid lightblue;
+    clip-path: inset(0 50% 0 0);
+    transform: rotate(0deg);
+    transition: 1.5s ease;
+}
+
+#score-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    font-weight: 700;
+    color: lightblue;
+}
+
+/* DRAG AND DROP ZONE */
+
+.drop-zone {
+    border: 2px dashed #c7d2fe;
+    padding: 30px;
+    border-radius: 16px;
+    background: #f8faff;
+    transition: all 0.25s ease;
+    margin-bottom: 10px;
+}
+
+.drop-zone:hover {
+    background: #eef2ff;
+    border-color: grey;
+}
+
+/* AUTH FORMS */
+
+.auth {
+    width: 360px;
+    margin-top: 120px;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.auth input {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    transition: 0.25s;
+}
+
+.auth input:focus {
+    outline: none;
+    border-color: blue;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+/* HERO SECTION */
+
+.hero {
+    margin-top: 120px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.btn {
+    padding: 16px 36px;
+    background: linear-gradient(135deg, grey, grey);
+    color: black;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.35);
+}
+
+/* FILE INPUT INSIDE DROP ZONE */
+
+#file-input {
+    margin-top: 12px;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    background: white;
+    cursor: pointer;
+}
+
+/* DRAG ACTIVE STATE */
+
+.drop-zone.dragover {
+    background: #eef2ff;
+    border-color: grey;
+    transform: scale(1.02);
+}
+
+/* RESULT TEXT */
+
+#rewriteResult {
+    margin-top: 15px;
+    white-space: pre-wrap;
+    line-height: 1.5;
+}
+
+.drop-zone {
+    cursor: pointer;
+}
